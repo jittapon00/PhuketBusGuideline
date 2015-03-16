@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">PhuketBusGuideline</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="first_page">This is first page!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_menu">MenuActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_world2">Menu Page</string>
+
+    <string name="app_name2">Slider Menu</string>
+    <string name="drawer_open">Slider Menu Opened</string>
+    <string name="drawer_close">Slider Menu Closed</string>
+
+    <!-- Nav Drawer Menu Items -->
+    <!--<item >What\'s Hot</item>-->
+    <string-array name="nav_drawer_items">
+        <item >Search Route</item>
+        <item >Find Bus Stop</item>
+        <item >View All</item>
+        <item >Info</item>
+        <item >Comment</item>
+    </string-array>
+
+    <!-- Nav Drawer List Item Icons -->
+    <!-- Keep them in order as the titles are in -->
+    <array name="nav_drawer_icons">
+        <item>@drawable/ic_bus</item>
+        <item>@drawable/ic_current1</item>
+        <item>@drawable/ic_road</item>
+        <item>@drawable/ic_info</item>
+        <item>@drawable/ic_comment</item>
+    </array>
+
+    <!-- Content Description -->
+    <string name="desc_list_item_icon">Item Icon</string>
+    <string name="home_view">Home View</string>
+    <string name="btn_comment">Comment</string>
+    <string name="btn_info">Service and Price</string>
+    <string name="btn_view">View All Route</string>
+    <string name="btn_busStop">Find Bus Stop</string>
+    <string name="btn_searchRoute">Search Route</string>
+    <string name="title_activity_search_route">SearchRouteActivity</string>
+    <string name="title_activity_view_all_route">ViewAllRouteActivity</string>
+    <string name="title_activity_comment">CommentActivity</string>
+    <string name="title_activity_service">ServiceActivity</string>
+    <string name="origin">Origin</string>
+
+</resources>
