@@ -1,6 +1,7 @@
 package pbg.se55.mypc.phuketbusguideline;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -9,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -16,8 +18,11 @@ import android.widget.ListView;
 public class SearchRouteActivity extends Activity {
     EditText oriText;
     EditText desText;
-    ListView originLsv;
+    //ListView originLsv;
     ListView desLsv;
+    Button search;
+    Intent i;
+    boolean isOrigin;
 
     ArrayAdapter<String> adt, adt2;
 
@@ -27,9 +32,11 @@ public class SearchRouteActivity extends Activity {
         setContentView(R.layout.activity_search_route);
 
         oriText = (EditText) findViewById(R.id.originText);
-        originLsv = (ListView) findViewById(R.id.originsSearch);
+        //originLsv = (ListView) findViewById(R.id.originsSearch);
         desText = (EditText) findViewById(R.id.destinationText);
         desLsv = (ListView) findViewById(R.id.destinationsSearch);
+        search = (Button) findViewById(R.id.btn_search_route);
+        i = (Intent) new Intent(this, Maps2Activity.class);
 
         String BusStopTH[] = {"บิ๊กซี","โลตัส","รพ.วชิระ","แยกสตรี","แยกอำเภอ"
                 ,"แยกจุ้ยตุ่ย","ซอยภูธร","วงเวียนน้ำพุ","บขส.เก่า","วงเวียนหอนาฬิกา"
@@ -43,7 +50,7 @@ public class SearchRouteActivity extends Activity {
         final String BusStopEN[] = {"BigC","Tesco Lotus","Wachira Hospital","Yaek Satree","Yaek Amphur"
                 ,"Yeak Chuiitui","Soi Putorn","WongWian Nampu","Bus Terminal(Old)","WongWian Hor Nalikar"
                 ,"Yaek BangNiau","Saphanhin","Chaloemprakiat School","Ratchapat Phuket University","Tukkae Cape"
-                ,"SuperCheap SuperMarket","Yaek Ratchapat","Phuketwittayalai School","Phuket Capitol(Sala Klang)","Expo"
+                ,"Super Cheap","Yaek Ratchapat","Phuketwittayalai School","Phuket Capitol(Sala Klang)","Expo"
                 ,"Kasait Market","Tessaban Muang School","Laem Chan","Wichit Songkram Municipal Office","Si Mum Muang Market"
                 ,"Bus Terminal (New)","Wonwian Saphanhin","Klong Bang Yai Bridge","Phuket Province Land Transport Office","Wongwian Suriyadet"
                 ,"Phuttamongkolnimit School","Stree Phuket School","Post Office","Phuket City Hospital","Landing Pier"
@@ -51,12 +58,13 @@ public class SearchRouteActivity extends Activity {
         };
 
         adt= new ArrayAdapter<String>(this, R.layout.listview_item,R.id.textViewTitle, BusStopEN);
-
+        adt2= new ArrayAdapter<String>(this, R.layout.listview_item,R.id.textViewTitle, BusStopEN);
 
         oriText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                originLsv.setAdapter(adt);
+
+                desLsv.setAdapter(adt);
                 oriText.addTextChangedListener(new TextWatcher() {
                     @Override
                     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -78,11 +86,13 @@ public class SearchRouteActivity extends Activity {
 
                     }
                 });
-            }
+                }
+
         });
-        originLsv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        desLsv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 oriText.setText((String) parent.getItemAtPosition(position));
                 adt.getFilter().filter(" ");
             }
@@ -90,10 +100,11 @@ public class SearchRouteActivity extends Activity {
 
 
 
-        adt2= new ArrayAdapter<String>(this, R.layout.listview_item,R.id.textViewTitle, BusStopEN);
+        //adt2= new ArrayAdapter<String>(this, R.layout.listview_item,R.id.textViewTitle, BusStopEN);
         desText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 desLsv.setAdapter(adt2);
 
                 desText.addTextChangedListener(new TextWatcher() {
@@ -104,8 +115,8 @@ public class SearchRouteActivity extends Activity {
 
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        if(oriText.getText().toString().matches(""))
-                            adt.getFilter().filter(" ");
+                        if(desText.getText().toString().matches(""))
+                            adt2.getFilter().filter(" ");
                         else
                             adt.getFilter().filter(s);
 
@@ -121,8 +132,17 @@ public class SearchRouteActivity extends Activity {
         desLsv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 desText.setText((String) parent.getItemAtPosition(position));
-                adt2.getFilter().filter(" ");
+                adt.getFilter().filter(" ");
+
+            }
+        });
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(i);
             }
         });
 

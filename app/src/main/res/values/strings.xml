@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">PhuketBusGuideline</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_main">MainActivity</string>
@@ -40,12 +41,19 @@
     <string name="btn_comment">Comment</string>
     <string name="btn_info">Service and Price</string>
     <string name="btn_view">View All Route</string>
-    <string name="btn_busStop">Find Bus Stop</string>
+    <string name="btn_busStop">Find Nearest Bus Stop</string>
     <string name="btn_searchRoute">Search Route</string>
     <string name="title_activity_search_route">SearchRouteActivity</string>
     <string name="title_activity_view_all_route">ViewAllRouteActivity</string>
     <string name="title_activity_comment">CommentActivity</string>
     <string name="title_activity_service">ServiceActivity</string>
     <string name="origin">Origin</string>
+    <string name="menu_title">Phuket Bus Guideline</string>
+    <string name="service_title"><![CDATA[Check price & service]]></string>
+    <string name="service_time">Service time</string>
+    <string name="service_from_to">6.00 AM - 7.00 PM</string>
+    <string name="service_charge">Price 10 Bath all routes</string>
+    <string name="title_activity_show_one_route">ShowOneRouteActivity</string>
+    <string name="title_activity_maps2">Maps2Activity</string>
 
 </resources>

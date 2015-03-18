@@ -1,6 +1,5 @@
 package pbg.se55.mypc.phuketbusguideline;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 
@@ -14,7 +13,7 @@ import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
 
-public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener {
+public class MapsActivity extends FragmentActivity /*implements GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener*/ {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
     ArrayList<LatLng> arrayPoints = new ArrayList<LatLng>();
@@ -69,18 +68,18 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapCli
      */
     private void setUpMap() {
 
-        mMap.addMarker(new MarkerOptions().position(new LatLng(7.883794, 98.390756)).title("Marker"));
+        mMap.addMarker(new MarkerOptions().position(new LatLng(7.883794, 98.390756)).title("Phuket"));
         mMap.moveCamera( CameraUpdateFactory.newLatLngZoom(new LatLng(7.883794, 98.390756), 1) );
         UiSettings uiSettings = mMap.getUiSettings();
         uiSettings.setZoomControlsEnabled(true);
         uiSettings.setMyLocationButtonEnabled(true);
-        mMap.setOnMapClickListener(this);
-        mMap.setOnMapLongClickListener(this);
+        //mMap.setOnMapClickListener(this);
+        //mMap.setOnMapLongClickListener(this);
 
 
     }
 
-    @Override
+    /*@Override
     public void onMapClick(LatLng latLng) {
         polylineOptions = new PolylineOptions();
         polylineOptions.color(Color.RED);
@@ -95,5 +94,5 @@ public class MapsActivity extends FragmentActivity implements GoogleMap.OnMapCli
     public void onMapLongClick(LatLng latLng) {
         mMap.clear();
         arrayPoints.clear();
-    }
+    }*/
 }

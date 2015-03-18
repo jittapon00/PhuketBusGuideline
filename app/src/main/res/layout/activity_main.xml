@@ -4,7 +4,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="pbg.se55.mypc.phuketbusguideline.MainActivity">
+    tools:context="pbg.se55.mypc.phuketbusguideline.MainActivity"
+    android:background="@drawable/potong">
 
 
 
@@ -14,16 +15,26 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center_vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_title"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textColor="#ff000000" />
+
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_searchRoute"
             android:id="@+id/btn_search_route"
             android:layout_alignParentTop="true"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:background="#ffffe6e8" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_busStop"
             android:id="@+id/btn_bus_stop"
@@ -32,10 +43,12 @@
             android:layout_alignEnd="@+id/btn_view"
             android:layout_alignLeft="@+id/btn_view"
             android:layout_alignStart="@+id/btn_view"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:background="#ffffe6e8" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_view"
             android:id="@+id/btn_view"
@@ -44,10 +57,12 @@
             android:layout_alignEnd="@+id/btn_info"
             android:layout_alignLeft="@+id/btn_info"
             android:layout_alignStart="@+id/btn_info"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:background="#ffffe6e8" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_info"
             android:id="@+id/btn_info"
@@ -55,10 +70,12 @@
             android:layout_alignLeft="@+id/btn_search_route"
             android:layout_alignStart="@+id/btn_search_route"
             android:layout_alignParentBottom="false"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:background="#ffffe6e8" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_comment"
             android:id="@+id/btn_comment"
@@ -67,6 +84,9 @@
             android:layout_alignParentStart="true"
             android:layout_alignRight="@+id/btn_info"
             android:layout_alignEnd="@+id/btn_info"
-            android:layout_gravity="center_horizontal" />
-        </LinearLayout>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:background="#ffffe6e8" />
+
+    </LinearLayout>
 </RelativeLayout>
